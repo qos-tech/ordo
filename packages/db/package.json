@@ -1,0 +1,28 @@
+{
+  "name": "@repo/db",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+        "db:import": "pnpm env:load prisma-import --schemas 'prisma/**/*.prisma' --output 'prisma/schema.prisma' --force",
+        "prisma": "pnpm env:load prisma",
+        "db:generate": "pnpm run db:import && pnpm prisma generate",
+        "db:studio": "pnpm run db:import && pnpm prisma studio",
+        "db:migrate:dev": "pnpm run db:import && pnpm prisma migrate dev",
+        "db:migrate:deploy": "pnpm run db:import && pnpm prisma migrate deploy",
+        "postinstall": "pnpm run db:generate",
+        "env:load": "dotenv -e ../../.env --"
+    },
+  "dependencies": {
+    "@prisma/client": "^6.16.1",
+    "pg": "^8.16.3"
+  },
+  "devDependencies": {
+    "@repo/eslint-config": "workspace:*",
+    "@repo/prettier-config": "workspace:*",
+    "@repo/typescript-config": "workspace:*",
+    "dotenv-cli": "^10.0.0",
+    "prisma": "^6.16.1",
+    "prisma-import": "^1.0.5"
+  },
+  "prettier": "@repo/prettier-config"
+}
