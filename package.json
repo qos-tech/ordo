@@ -1,5 +1,5 @@
 {
-  "name": "ordo",
+  "name": "qchat-apiv2",
   "private": true,
   "scripts": {
     "build": "turbo run build",

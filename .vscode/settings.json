@@ -7,7 +7,5 @@
   "workbench.statusBar.visible": false,
   "workbench.editor.showTabs": "single",
   "workbench.editor.enablePreview": false,
-  "workbench.activityBar.location": "hidden",
-  "postman.settings.dotenv-detection-notification-visibility": false,
-  "prisma.file": "packages/db/prisma/schema.prisma"
+  "workbench.activityBar.location": "hidden"
 }
